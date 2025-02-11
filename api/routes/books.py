@@ -1,6 +1,6 @@
 from typing import OrderedDict
 
-from fastapi import APIRouter, status
+from fastapi import APIRouter, status, HTTPException
 from fastapi.responses import JSONResponse
 
 from api.db.schemas import Book, Genre, InMemoryDB
@@ -32,6 +32,14 @@ db.books = {
     ),
 }
 
+@router.get("/api/v1/books/{book_id}", status_code=status.HTTP_200_OK)
+async def get_book(book_id: int):
+    # Retrieve the book by book_id from the in-memory database
+    book = db.books.get(book_id)
+    if book:
+        return book
+    # If the book is not found, raise a 404 HTTP exception
+    raise HTTPException(status_code=404, detail="Book not found")
 
 @router.post("/", status_code=status.HTTP_201_CREATED)
 async def create_book(book: Book):
