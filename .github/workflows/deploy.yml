@@ -30,7 +30,7 @@ jobs:
 
       - name: Deploy to EC2 instance
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@http://13.48.46.95/ << 'EOF'
+          ssh -o StrictHostKeyChecking=no ubuntu@13.48.46.95/ << 'EOF'
             # Pull the latest Docker image from Docker Hub or rebuild it
             docker pull nuel224/fastapi-app:latest
 
