@@ -89,7 +89,7 @@ uvicorn main:app
 - `PUT /api/v1/books/{book_id}` - Update a book
 - `DELETE /api/v1/books/{book_id}` - Delete a book
 
-### Health Check
+### Health Checks
 
 - `GET /healthcheck` - Check API status
 
