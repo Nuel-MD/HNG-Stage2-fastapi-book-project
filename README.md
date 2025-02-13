@@ -105,7 +105,7 @@ uvicorn main:app
 }
 ```
 
-Available genres:
+Available genre:
 
 - Science Fiction
 - Fantasy
