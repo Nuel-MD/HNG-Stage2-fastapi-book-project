@@ -36,7 +36,7 @@ fastapi-book-project/
 └── README.md
 ```
 
-## Technologies Used
+## Technologies Involved
 
 - Python 3.12
 - FastAPI
